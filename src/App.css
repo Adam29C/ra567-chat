@@ -1,0 +1,21 @@
+:root {
+  --border-color: #1c3e35;
+  background: #1c3e35;
+  --main-color: linear-gradient(97.51deg, #1c3e35 -39.91%, #4aa48c 117.67%);
+  /* linear-gradient(
+    180deg,
+    #5ebdc4,
+    #a3dadd
+  ); */
+  color: #1c3e35;
+}
+
+.login-color {
+  background: var(--main-color);
+}
+
+.login-:hover {
+  background: var(--main-color);
+}
+
+

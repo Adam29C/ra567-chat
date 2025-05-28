@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* --border-color: #1c3e35;
+  background: #1c3e35;
+  --main-color: linear-gradient(97.51deg, #1c3e35 -39.91%, #4aa48c 117.67%); */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0;
+  scrollbar-color: unset !important;
+  /* background: #F4F3F3; */
+}
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: #f1f1f1; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #151791;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #020044;
+}
+
+.ping_icon {
+  /* background-color: red; */
+  rotate: -45deg;
+}
+
+td,
+thead,
+tr,
+th,
+table {
+  border: 1px solid var(--border-color);
+  padding: 5px 6px;
+}
+
+.ellipsis {
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  overflow: hidden; /* Hides the overflowing text */
+  text-overflow: ellipsis; /* Displays ellipsis when the text overflows */
+  width: 200px; /* Adjust width as needed */
+}
+.last-message-font {
+  font-size: 15px;
+}
+
+.font-sizes {
+  font-size: 10px;
+}
+
+.add-point-btn {
+  font-size: 11px;
+}
+
+.test-color {
+  background: var(--main-color);
+}
+
+.testing-ui {
+  z-index: -1 !important;
+  /* border: 5px solid greenyellow; */
+  background-color: white;
+}
+.shadow-border-radius {
+  border-radius: 25px 25px 0 0;
+
+  box-shadow:
+    rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+.profile-img {
+  background: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.chat-start .chat-bubble {
+  grid-column-start: 2;
+  border-end-start-radius: 0px;
+  /* background: linear-gradient(97.51deg, #37574e -39.91%, #4aa48c 117.67%); */
+  background: #fff;
+
+  color: #000;
+}
+
+.replay-message-bg {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.replay-message-border {
+  border-left: 42px solid
+    linear-gradient(97.51deg, #1c3e35 -39.91%, #4aa48c 117.67%) !important;
+}
+.chat-end .chat-bubble {
+  /* background: #fff !important; */
+  background: var(--main-color);
+}
+
+.send-button-color {
+  background: var(--main-color);
+}
+.diable-send-button-color {
+  background: linear-gradient(97.51deg, #8aa79f -39.91%, #4aa48c 80.67%);
+}
+
+.main-bg {
+  background: var(--main-color);
+}
+.ttttttttt {
+  /* height: 80vh;
+  border: 2px solid black; */
+
+  position: relative;
+}
+
+.send-button {
+  position: absolute;
+  bottom: 10vh;
+  /* width: 80% !important; */
+  /* left: 19%; */
+}
+.custom-margin {
+  /* height: 72vh; */
+  /* margin-top: 79px; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  overflow-y: scroll;
+}
+
+.testing-pdd {
+  padding-top: 15rem;
+}
+@media (max-width: 1024px) {
+  .custom-margin {
+    margin-top: 79px;
+  }
+}
+@media (max-width: 420px) {
+  .custom-message-font-size {
+    font-size: 13px;
+  }
+}
+@media (min-width: 320px) and (max-width: 1024px) {
+  .nav {
+    background: red;
+  }
+  .ttttttttt {
+    /* height: 35vh; */
+  }
+  /* .custom-margin {
+    height: 80vh;
+ 
+   } */
+  .send-button {
+    position: absolute;
+    bottom: 4vh;
+    /* width: 80% !important; */
+    /* left: 19%; */
+  }
+}
+@media (min-width: 320px) and (max-width: 1024px) {
+  .nav {
+    background: red;
+  }
+}
