@@ -107,7 +107,8 @@ const Chatbox = () => {
             <div className="flex flex-col root-color">
               <img
                 src={
-                  'https://rich143.com/static/media/updatedlogo.778bb66b8ac72949874f0c8180098037.svg'
+                  './images/newradhaLogo.png'
+                  // 'https://rich143.com/static/media/updatedlogo.778bb66b8ac72949874f0c8180098037.svg'
                 }
                 alt="profile"
               />
@@ -124,10 +125,13 @@ const Chatbox = () => {
 
           <div
             className={`custom-margin  bg-gray-200
-              ${showReplay || showShortcut ? '  md:max-h-[63vh] lg:max-h-[67vh]' : 
-                PreviewImage ? 'max-h-[20vh] md:max-h-[0vh] lg:max-h-[0vh]' :
-                
-                'md:max-h-[69vh] lg:max-h-[80vh]'}`}
+              ${
+                showReplay || showShortcut
+                  ? '  md:max-h-[63vh] lg:max-h-[67vh]'
+                  : PreviewImage
+                    ? 'max-h-[20vh] md:max-h-[0vh] lg:max-h-[0vh]'
+                    : 'md:max-h-[69vh] lg:max-h-[80vh]'
+              }`}
           >
             {!PreviewImage && (
               <Messages

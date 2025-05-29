@@ -122,7 +122,7 @@ const SingleUser = ({ data, title, abc }) => {
           <div className="font-sizes last-message-font text-gray-500 truncate">
             {data?.mobile}
           </div>
-          <div className="font-sizes text-emerald-600 truncate">
+          <div className="font-sizes  text-emerald-600 truncate">
             {data?.lastMess}
           </div>
         </div>
@@ -134,7 +134,7 @@ const SingleUser = ({ data, title, abc }) => {
             {formatWhatsAppDate(data.dateTimestamp)}
           </span>
           {data.counter > 0 && (
-            <span className="text-xs bg-green-500 text-white font-bold rounded-full px-2 py-0.5">
+            <span className="text-xs chatnumbercolor text-white font-bold rounded-full px-2 py-0.5 ">
               {data.counter}
             </span>
           )}

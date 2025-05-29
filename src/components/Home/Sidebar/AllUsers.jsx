@@ -463,7 +463,7 @@ const InfiniteScrollBox = () => {
 
   useEffect(() => {
     socket.on('update_user_list_entry', (updatedUser) => {
-      console.log('updatedUser', updatedUser);
+      // console.log('updatedUser', updatedUser);
 
       const updatedList = otherUsers
         .map((user) => (user?._id === updatedUser?._id ? updatedUser : user))
@@ -501,12 +501,10 @@ const InfiniteScrollBox = () => {
     },
     [loading]
   );
-
   // fetch on page change
   useEffect(() => {
     fetchData(page);
   }, [page]);
-
   return (
     // <div
     //   className={` bg-slate-100 hide_scrollbar px-3 max-h-[83vh] md:max-h-[86vh] lg:max-h-[85vh] `}

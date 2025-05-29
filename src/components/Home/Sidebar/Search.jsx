@@ -310,7 +310,6 @@ const Search = ({ title }) => {
     },
     [loading]
   );
-
   // fetch on page change
   useEffect(() => {
     fetchData(page);
@@ -318,7 +317,10 @@ const Search = ({ title }) => {
 
   return (
     <>
-      <div className="w-full pt-4   bg-slate-100 sh-[6vh] h-fit md:h-[7vh] lg:h-[6vh] flex justify-center shadow-border-radius  border-grey-200 "  onScroll={handleScroll}>
+      <div
+        className="w-full pt-4   bg-slate-100 sh-[6vh] h-fit md:h-[7vh] lg:h-[6vh] flex justify-center shadow-border-radius  border-grey-200 "
+        onScroll={handleScroll}
+      >
         <label
           className={`w-[95%] border ${darkMode ? 'bg-gray-900 border-gray-700' : 'bg-gray-200 border-gray-300'}  rounded-full px-1 flex items-center font-semibold `}
         >
