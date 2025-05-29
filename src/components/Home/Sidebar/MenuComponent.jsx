@@ -192,11 +192,6 @@ const MenuComponent = () => {
           apiRoutes.CREATE_BROADCAST_MSGS_LIST,
           payload
         );
-
-
-
-
-        
       } else {
         const payload = {
           messKey: values.messKey,
@@ -378,7 +373,7 @@ const MenuComponent = () => {
   };
 
   const getAllUser = async () => {
-    console.log('socket', search);
+    // console.log('socket', search);
 
     socket.emit('get_user_list', { page: '', limit: '', search: search });
 
