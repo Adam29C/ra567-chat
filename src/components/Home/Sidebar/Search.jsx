@@ -318,7 +318,7 @@ const Search = ({ title }) => {
   return (
     <>
       <div
-        className="w-full pt-4   bg-slate-100 sh-[6vh] h-fit md:h-[7vh] lg:h-[6vh] flex justify-center shadow-border-radius  border-grey-200 "
+        className="w-full pt-1 pb-1   bg-slate-100 sh-[6vh] h-fit md:h-[7vh] lg:h-[6vh] flex justify-center shadow-border-radius  border-grey-200 "
         onScroll={handleScroll}
       >
         <label
