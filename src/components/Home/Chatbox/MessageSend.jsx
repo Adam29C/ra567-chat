@@ -182,7 +182,7 @@ const MessageSend = ({ setfirst }) => {
     <>
       <form onSubmit={handleSendMessage}>
         <div
-          className={`  h-[10vh] w-full flex justify-center items-center ${darkMode ? 'bg-slate-900' : 'bg-gray-200'}  `}
+          className={`h-[10vh] w-full flex justify-center items-center ${darkMode ? 'bg-slate-900' : 'bg-gray-200'}  `}
           ref={modalRef}
         >
           {isPickerVisible && (
