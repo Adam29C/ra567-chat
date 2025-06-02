@@ -17,7 +17,7 @@ import DialogBox from '../../HelpersComponents/DialogBox';
 import {
   FOR_GET_LIST,
   FOR_POST_REQUEST,
-  FOR_UPDATE_REQUEST
+  FOR_UPDATE_REQUEST,
 } from '../../../services/common.service';
 import { apiRoutes } from '../../../utils/apiRoutes';
 import toast from 'react-hot-toast';
@@ -251,7 +251,9 @@ const ChatUser = ({ abcd }) => {
             <IoMdArrowBack />
           </button>
           <div
-            className={`w-[100%] md:w-[90%] lg:w-[100%] h-[80%] mx-3 flex justify-center  px-2 py-1 items-center space-x-3  ${darkMode ? 'bg-slate-900 hover:bg-slate-800' : 'bg-gray-100 hover:bg-gray-200 '} rounded-md `}
+            className={`w-[100%] md:w-[90%] lg:w-[100%] h-[80%] mx-3 flex justify-center px-2 pt-6 pb-6 items-center space-x-1 -space-y-2 mt-1 rounded-md`}
+
+            // className={`w-[100%] md:w-[90%] lg:w-[100%] h-[80%] mx-3 flex justify-center  px-2 py-1 items-center space-x-3  ${darkMode ? 'bg-slate-900 hover:bg-slate-800' : 'bg-gray-100 hover:bg-gray-200 '} rounded-md `}
           >
             <div className={`avatar  hidden  sm:block`}>
               <div className="w-12 rounded-full profile-img  ">
@@ -263,14 +265,16 @@ const ChatUser = ({ abcd }) => {
               </div>
             </div>
             <div>
-              <h1 className="text- add-point-btn1">{selectedUser.userName}</h1>
-              <span className="text- font-sizes m-0">
+              <h1 className="text- -mb-2 add-point-btn1">
+                {selectedUser.userName}
+              </h1>
+              <span className="text- -mt-1 font-sizes m-0">
                 {selectedUser.mobile}
               </span>
 
               <br />
               <span
-                className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} font-sizes`}
+                className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} font-sizes -mb-4`}
               >
                 Last Seen -{' '}
                 {Get_Year_With_Time_With_Column_Saprate(selectedUser.lastSeen)}
