@@ -243,7 +243,7 @@ const ChatUser = ({ abcd }) => {
       <div
         className={`sh-[11vh] h-fit md:h-[9vh] lg:h-[9vh] w-full p-3 md:p-0 flex items-center justify-between  ${darkMode ? 'bg-slate-950 border-l-0 md:border-l-2 border-gray-700' : 'border-none bg-white'} fixed top-0 z-10 md:static lg:static`}
       >
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <button
             className={`d-flex justify-center items-center md:hidden lg:hidden p-1 ${darkMode ? 'bg-blue-950' : 'bg-gray-200'} rounded-full  text-xl `}
             onClick={handleProfileBackBtn}
@@ -251,9 +251,9 @@ const ChatUser = ({ abcd }) => {
             <IoMdArrowBack />
           </button>
           <div
-            className={`w-[100%] md:w-[90%] lg:w-[100%] h-[80%] mx-3 flex justify-center px-2 pt-6 pb-6 items-center space-x-1 -space-y-2 mt-1 rounded-md`}
+            // className={`w-[100%] md:w-[90%] lg:w-[100%] h-[80%] mx-3 flex justify-center px-2 pt-6 pb-6 items-center space-x-1 -space-y-2 mt-1 rounded-md`}
 
-            // className={`w-[100%] md:w-[90%] lg:w-[100%] h-[80%] mx-3 flex justify-center  px-2 py-1 items-center space-x-3  ${darkMode ? 'bg-slate-900 hover:bg-slate-800' : 'bg-gray-100 hover:bg-gray-200 '} rounded-md `}
+            className={`w-[100%] md:w-[90%] lg:w-[100%] h-[80%] mx-3 flex justify-around  px-2 -py-5  items-center space-x-3 -space-y-1 ${darkMode ? 'bg-slate-900 hover:bg-slate-800' : 'bg-gray-100 hover:bg-gray-200 '} rounded-md `}
           >
             <div className={`avatar  hidden  sm:block`}>
               <div className="w-12 rounded-full profile-img  ">
@@ -265,20 +265,56 @@ const ChatUser = ({ abcd }) => {
               </div>
             </div>
             <div>
-              <h1 className="text- -mb-2 add-point-btn1">
+              <h1 className="text-  add-point-btn1">
                 {selectedUser.userName}
               </h1>
-              <span className="text- -mt-1 font-sizes m-0">
+              <span className="text- font-sizes m-0">
                 {selectedUser.mobile}
               </span>
 
               <br />
               <span
-                className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} font-sizes -mb-4`}
+                className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} font-sizes -mb-3 -mt-2`}
               >
                 Last Seen -{' '}
                 {Get_Year_With_Time_With_Column_Saprate(selectedUser.lastSeen)}
               </span>
+            </div>
+          </div>
+        </div> */}
+        <div className="flex items-center gap-3">
+          {/* Back Button (Mobile Only) */}
+          <button
+            onClick={handleProfileBackBtn}
+            className={`md:hidden p-2 rounded-full text-xl ${darkMode ? 'bg-blue-950' : 'bg-gray-200'}`}
+          >
+            <IoMdArrowBack />
+          </button>
+
+          {/* Profile Info Container */}
+          <div
+            className={`w-full md:w-[90%] lg:w-full h-auto mx-2 flex items-center gap-1 px-3 py-1 rounded-md
+      `}
+          >
+            {/* Avatar */}
+            <div className="avatar hidden sm:block">
+              <div className="w-12 rounded-full profile-img overflow-hidden">
+                <img src="./images/default_profile.png" alt="profile" />
+              </div>
+            </div>
+
+            {/* User Info */}
+            <div className="leading-tight text-left">
+              <h1 className="text-base font-semibold add-point-btn1">
+                {selectedUser.userName}
+              </h1>
+              <p className="text-sm font-sizes -mt-1">{selectedUser.mobile}</p>
+              <p
+                className={`text-xs font-sizes -mt-0.5 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}
+              >
+                Last Seen -{' '}
+                {Get_Year_With_Time_With_Column_Saprate(selectedUser.lastSeen)}
+              </p>
             </div>
           </div>
         </div>

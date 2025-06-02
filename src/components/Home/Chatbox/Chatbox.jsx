@@ -144,7 +144,7 @@ const Chatbox = () => {
             )}
           </div>
 
-          <div className=" w-full fixed bottom-0 md:static md:bottom-0 lg:static lg:z-0 ">
+          <div className=" w-full fixed -bottom-8 md:static md:bottom-0 lg:static lg:z-0 ">
             <ReplayMessage />
             <ShowShortcut />
             {/* <MessageSend setfirst={setfirst} first={first} socket={socket} /> */}
