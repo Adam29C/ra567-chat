@@ -82,8 +82,8 @@ const MenuComponent = () => {
     document.getElementById('my_modal_1').showModal();
   };
   const handleLogOutConfirmBtn = () => {
-    localStorage.removeItem('chatit');
-    localStorage.removeItem('chatit_darkmode');
+    localStorage.removeItem('info');
+    localStorage.removeItem('token');
     dispatch(setTheme(false));
     navigate('/login');
   };
@@ -143,7 +143,6 @@ const MenuComponent = () => {
       message: CreateStatus === 3 && SetRowData ? SetRowData.message : '',
       fileUrl: CreateStatus === 3 && SetRowData ? SetRowData.images : '',
     },
-
     validate: (values) => {
       const errors = {};
 
@@ -470,7 +469,7 @@ const MenuComponent = () => {
       <dialog id="my_modal_1" className="modal">
         <div className="modal-box">
           <h3 className="font-semibold text-lg">Log out?</h3>
-          <p className="py-4">Are you sure you want to log out?121212</p>
+          <p className="py-4">Are you sure you want to log out?</p>
 
           <div className="modal-action w-full flex justify-around">
             <button onClick={handleLogOutConfirmBtn}>Yes</button>

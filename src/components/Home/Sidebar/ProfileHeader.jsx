@@ -62,7 +62,7 @@ const ProfileHeader = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="  w-full flex py-2 sh-[13vh] h-fit relative bg-none">
+    <div className="w-full flex py-2 sh-[13vh] h-fit relative bg-none">
       <div className="w-[100%] flex flex-row-reverse items-center   ">
         <MenuComponent />
         <div
