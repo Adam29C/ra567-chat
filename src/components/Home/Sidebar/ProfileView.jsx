@@ -24,7 +24,7 @@ const ProfileView = ({ handleProfileView, profileImage }) => {
             src={profileImage?.profilePic || './images/default_profile.png'}
             alt="profile"
             // srcSet=""
-            className=" h-full"
+            className="h-full"
           />
         </div>
       </div>

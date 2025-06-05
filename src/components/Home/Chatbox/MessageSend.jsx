@@ -198,7 +198,7 @@ const MessageSend = ({ setfirst }) => {
             </div>
           )}
           <div
-            className={` send-button w-[90%] sm:w-[50%] md:w-[50%] lg:w-[50%]  flex justify-between items-center ${darkMode ? 'bg-slate-800' : 'bg-white'} rounded-full shadow`}
+            className={`send-button w-[90%] sm:w-[50%] md:w-[50%] lg:w-[50%]  flex justify-between items-center ${darkMode ? 'bg-slate-800' : 'bg-white'} rounded-full shadow`}
           >
             <button
               className={`${darkMode ? 'bg-slate-700 hover:bg-slate-900 text-white' : 'bg-slate-100 hover:bg-slate-300'} rounded-full  p-2 mx-1`}
@@ -235,7 +235,11 @@ const MessageSend = ({ setfirst }) => {
                 </div> */}
 
                 <div className="dropdown">
-                  <div tabIndex={0} role="span" className="bg-transparent px-6 m-1">
+                  <div
+                    tabIndex={0}
+                    role="span"
+                    className="bg-transparent px-6 m-1"
+                  >
                     <FaPlus className="text-2xl" />
                   </div>
                   <ul

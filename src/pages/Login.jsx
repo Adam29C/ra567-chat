@@ -91,9 +91,9 @@ const Login = () => {
           </span>
         </div>
       )}
-      <div className="w-full h-auto md:h-dvh flex items-center justify-center bg-blue-100 ">
+      {/* <div className="w-full h-auto md:h-dvh flex items-center justify-center bg-blue-100 ">
         <div className="bg-white w-full md:w-10/12 lg:w-6/12 pt-12 md:pt-0 flex flex-col md:flex-row items-center rounded shadow-md ">
-          {/* ================== Login Input Fields ================== */}
+
           <div className="p-4 px-8 flex flex-col">
             <h3 className="text-2xl font-bold text-blue-900">Log in</h3>
             <p className="text-sm text-gray-400">
@@ -175,14 +175,97 @@ const Login = () => {
             </form>
           </div>
 
-          {/* ================== Side picture ====================== */}
           <div className="w-10/12 md:w-6/12 flex items-center ">
             <div className="w-full">
               <img src="./images/login.png" alt="login" className="w-full" />
             </div>
           </div>
         </div>
+      </div> */}
+
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+        <div className="w-full max-w-sm md:max-w-md bg-white p-6 md:p-8 rounded-lg shadow-xl">
+          <h3 className="text-2xl font-bold text-blue-900 mb-1">Log in</h3>
+          <p className="text-sm text-gray-500 mb-4">
+            Welcome user, please Log in to continue
+          </p>
+
+          <form className="flex flex-col gap-y-4" onSubmit={handleSubmit}>
+            {/* Email Field */}
+            <div className="flex flex-col gap-y-1">
+              <TextField
+                id="standard-basic"
+                label="Email"
+                variant="standard"
+                name="username"
+                type="text"
+                value={values.username}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                fullWidth
+              />
+              <span className="text-red-500 text-sm">
+                {errors.username && touched.username ? errors.username : null}
+              </span>
+            </div>
+
+            {/* Password Field */}
+            <div className="flex flex-col gap-y-1">
+              <FormControl variant="standard" fullWidth>
+                <InputLabel htmlFor="standard-adornment-password">
+                  Password
+                </InputLabel>
+                <Input
+                  id="standard-adornment-password"
+                  type={showPassword ? 'text' : 'password'}
+                  name="password"
+                  value={values.password}
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                      >
+                        {showPassword ? (
+                          <IoEyeOffSharp className="text-base text-gray-400" />
+                        ) : (
+                          <IoEyeSharp className="text-base text-gray-400" />
+                        )}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                />
+              </FormControl>
+              <span className="text-red-500 text-sm">
+                {errors.password && touched.password ? errors.password : null}
+              </span>
+            </div>
+
+            {/* Submit Button */}
+            {loading ? (
+              <button
+                className="flex justify-center items-center gap-x-2 bg-blue-600 text-white py-2 rounded font-semibold mt-2"
+                type="button"
+                disabled
+              >
+                <span className="loading loading-spinner loading-xs"></span>
+                Loading...
+              </button>
+            ) : (
+              <button
+                className="login-color  text-white py-2 rounded-xl font-bold mt-2 transition duration-200"
+                type="submit"
+              >
+                Log in
+              </button>
+            )}
+          </form>
+        </div>
       </div>
+
       <ToastContainer />
     </>
   );
