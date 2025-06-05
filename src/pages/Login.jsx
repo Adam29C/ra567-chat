@@ -183,6 +183,7 @@ const Login = () => {
         </div>
       </div> */}
 
+
       <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
         <div className="w-full max-w-sm md:max-w-md bg-white p-6 md:p-8 rounded-lg shadow-xl">
           <h3 className="text-2xl font-bold text-blue-900 mb-1">Log in</h3>
