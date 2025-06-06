@@ -86,6 +86,12 @@ const MenuComponent = () => {
     localStorage.removeItem('token');
     dispatch(setTheme(false));
     navigate('/login');
+
+    const faviconTag = document.getElementById('addFavicon');
+    if (faviconTag) {
+      faviconTag.href = '';
+      window.location.reload();
+    }
   };
   useEffect(() => {
     const handleClickOutside = (e) => {

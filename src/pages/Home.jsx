@@ -6,7 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setAuthUser } from '../Redux/features/user/userSlice';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import { $ } from 'jquery';
+// import { $ } from 'jquery';
+
+import facicon from '../../public/images/newradha.png';
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const darkMode = useSelector((state) => state.darkTheme.value);
@@ -47,9 +49,12 @@ const Home = () => {
   // );
 
   useEffect(() => {
-    // document.getElementById('title');
-
     document.title = 'Radha567 Games';
+
+    const faviconTag = document.getElementById('addFavicon');
+    if (faviconTag) {
+      faviconTag.href = facicon;
+    }
   }, []);
 
   return (
