@@ -8,7 +8,6 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 // import { $ } from 'jquery';
 
-import facicon from '../../public/images/newradha.png';
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const darkMode = useSelector((state) => state.darkTheme.value);
@@ -48,14 +47,14 @@ const Home = () => {
   //   localStorage.getItem('info')
   // );
 
-  useEffect(() => {
-    document.title = 'Radha567 Games';
+  // useEffect(() => {
+  //   document.title = 'Radha567 Games';
 
-    const faviconTag = document.getElementById('addFavicon');
-    if (faviconTag) {
-      faviconTag.href = facicon;
-    }
-  }, []);
+  //   const faviconTag = document.getElementById('addFavicon');
+  //   if (faviconTag) {
+  //     faviconTag.href = facicon;
+  //   }
+  // }, []);
 
   return (
     <>

@@ -9,6 +9,7 @@ import ChangePassword from './pages/ChangePassword';
 import DeleteAccount from './pages/DeleteAccount';
 import About from './pages/About';
 import PageNotFound from './pages/PageNotFound';
+import DynamicFaviconAndTitle from './components/HelpersComponents/DynamicFavicon';
 // ================ import pages =====================
 const Home = lazy(() => import('./pages/Home'));
 const Login = lazy(() => import('./pages/Login'));
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <>
+      <DynamicFaviconAndTitle />
       <Routes>
         <Route element={<ProtectRoute user={!auth} redirect="/login" />}>
           <Route path="/" element={<Home />} />
