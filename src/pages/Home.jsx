@@ -6,15 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setAuthUser } from '../Redux/features/user/userSlice';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-
+import { $ } from 'jquery';
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const darkMode = useSelector((state) => state.darkTheme.value);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
-  
   // const userApiCall = async () => {
   //   setLoading(true);
   //   const res = await GetUserData();
@@ -47,6 +45,12 @@ const Home = () => {
   // const { _id, email, mobile, name, role } = JSON.parse(
   //   localStorage.getItem('info')
   // );
+
+  useEffect(() => {
+    // document.getElementById('title');
+
+    document.title = 'Radha567 Games';
+  }, []);
 
   return (
     <>
