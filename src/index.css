@@ -163,6 +163,11 @@ table {
   overflow-y: scroll;
 }
 
+.img-only{
+  width: 400px;
+  height: 500px;
+  /* object-fit: cover; */
+}
 .testing-pdd {
   padding-top: 15rem;
 }

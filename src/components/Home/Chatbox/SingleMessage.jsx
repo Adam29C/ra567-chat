@@ -33,9 +33,7 @@ const SingleMessage = ({ data, setShowReplayBox, dates, groupedMessages }) => {
     localStorage.getItem('info')
   );
 
-
-  console.log("datadata" ,data);
-  
+  console.log('datadata', data);
 
   const bottomRef = useRef(null);
 
@@ -249,9 +247,11 @@ const SingleMessage = ({ data, setShowReplayBox, dates, groupedMessages }) => {
               data.images[0] !== '' &&
               data.message !== '' ? (
                 <>
-                  <div className="self-end text-end text-xs me-2  text-gray-600">
-                    {name}
-                  </div>
+                  {_id === data.sender && (
+                    <div className="self-end text-end text-xs me-2  text-gray-600">
+                      {name}
+                    </div>
+                  )}
                   <div
                     className={`max-w-[50%] chat-bubble relative px-4 py-2 flex items-center gap-2 shadow-md transition duration-200 
   ${'isSender' == 'isSender' ? 'bg-blue-500 text-white' : darkMode ? 'bg-slate-800 text-white' : 'bg-white text-black'}`}
@@ -286,9 +286,11 @@ const SingleMessage = ({ data, setShowReplayBox, dates, groupedMessages }) => {
                 data.images[0] !== '' &&
                 data.message === '' ? (
                 <>
-                  <div className="self-end text-end text-xs me-2  text-gray-600">
-                    {name}
-                  </div>
+                  {_id === data.sender && (
+                    <div className="self-end text-end text-xs me-2  text-gray-600">
+                      {name}
+                    </div>
+                  )}
                   <div
                     className={`max-w-[50%] chat-bubble relative px-4 py-2 flex items-center gap-2 shadow-md transition duration-200 
 ${'isSender' == 'isSender' ? 'bg-blue-500 text-white' : darkMode ? 'bg-slate-800 text-white' : 'bg-white text-black'}`}
@@ -439,6 +441,7 @@ ${'isSender' == 'isSender' ? 'bg-blue-500 text-white' : darkMode ? 'bg-slate-800
         </div>
       </dialog>
 
+
       <DialogBox
         // Modal_width={'65rem'}
         Modal_width={'40%'}
@@ -451,8 +454,8 @@ ${'isSender' == 'isSender' ? 'bg-blue-500 text-white' : darkMode ? 'bg-slate-800
             <img
               src={data.images[0]}
               alt="img-only"
-              height={500}
-              width={500}
+              className="img-only"
+             
               // onClick={previewImage}
             />
           </>

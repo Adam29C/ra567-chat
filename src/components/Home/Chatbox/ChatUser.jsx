@@ -162,6 +162,7 @@ const ChatUser = ({ abcd }) => {
 
         let msg = ` Amount:- ₹${values.amount} add Wallet Balance Updated Successfully`;
         SendMessages(selectedUser, _id, msg, name);
+formik.resetForm()
 
         toast.success(response.message.message, { position: 'top-center' });
       } else {
@@ -239,7 +240,7 @@ const ChatUser = ({ abcd }) => {
 
     if (response.status === 'success') {
       // const res = await GET_ALL_USERS_URI_API();
-
+formik.resetForm()
       // dispatch(setOtherUsers(res?.data.users));
       setOpenModal(false);
       toast.success(response.message, {
