@@ -119,6 +119,7 @@ table {
 .replay-message-bg {
   background: var(--main-color);
   color: #fff;
+  word-wrap: break-word;
 }
 
 .replay-message-border {
@@ -149,7 +150,7 @@ table {
 
 .send-button {
   position: absolute;
-  bottom: 10vh;
+  bottom: 4vh;
   /* width: 80% !important; */
   /* left: 19%; */
 }

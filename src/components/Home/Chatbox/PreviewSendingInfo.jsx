@@ -118,7 +118,10 @@ const PreviewSendingInfo = () => {
       socket.off('chat_history');
     };
   }, [dispatch]);
+  
 
+  console.log("getDocuments" ,getDocuments);
+  
   return (
     <>
       <form action="" onSubmit={handleSendMessage}>

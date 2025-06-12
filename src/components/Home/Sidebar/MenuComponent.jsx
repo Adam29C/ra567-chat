@@ -630,13 +630,13 @@ const MenuComponent = () => {
         }
       />
       <MdOutlineMessage
-        className="text-2xl ms-3"
+        className="text-2xl ms-3 cursor-pointer"
         onClick={() => {
           setOpenModal(!OpenModal), setCreateStatus(7);
         }}
       />
       <FaCircleNotch
-        className="text-2xl mx-4 me-2  "
+        className="text-2xl mx-4 me-2 cursor-pointer "
         onClick={() => {
           setOpenModal(!OpenModal), setCreateStatus(6);
         }}

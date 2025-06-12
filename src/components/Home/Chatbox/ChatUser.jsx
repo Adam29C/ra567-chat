@@ -33,6 +33,7 @@ import {
   Get_Year_With_Time_With_Column_Saprate,
 } from '../../../helpers/helpers';
 import { useNavigate } from 'react-router-dom';
+import { SendMessages } from '../../../utils/Socket.Io';
 
 const ChatUser = ({ abcd }) => {
   const navigate = useNavigate();
@@ -127,7 +128,7 @@ const ChatUser = ({ abcd }) => {
       userId: '',
       type: '1',
       amount: '',
-      paymenttype: 'UPI',
+      paymenttype: 'manual',
       upiId: '',
       refrenceNumber: '',
     },
@@ -136,10 +137,10 @@ const ChatUser = ({ abcd }) => {
       if (!values.amount) errors.amount = 'Amount is required';
       else if (parseInt(values.amount) < 10)
         errors.amount = 'Amount must be greater than 10';
-      if (!values.upiId) errors.upiId = 'Please select UPI';
-      if (!values.paymenttype) errors.paymenttype = 'Please select Type';
-      if (!values.refrenceNumber)
-        errors.refrenceNumber = 'Please enter Reference Number';
+      // // if (!values.upiId) errors.upiId = 'Please select UPI';
+      // // if (!values.paymenttype) errors.paymenttype = 'Please select Type';
+      // if (!values.refrenceNumber)
+      //   errors.refrenceNumber = 'Please enter Reference Number';
       return errors;
     },
     onSubmit: async (values) => {
@@ -148,14 +149,20 @@ const ChatUser = ({ abcd }) => {
         type: values.type,
         amount: values.amount,
         paymenttype: values.paymenttype,
-        upiId: values.upiId,
-        refrenceNumber: values.refrenceNumber,
+        // upiId: values.upiId,
+        // refrenceNumber: values.refrenceNumber,
       };
 
       const response = await FOR_POST_REQUEST(apiRoutes.ADD_POINT_URI, payload);
 
+      console.log('response', response);
+
       if (response.message?.status === 'Success') {
         setOpenModal(false);
+
+        let msg = ` Amount:- ₹${values.amount} add Wallet Balance Updated Successfully`;
+        SendMessages(selectedUser, _id, msg, name);
+
         toast.success(response.message.message, { position: 'top-center' });
       } else {
         setOpenModal(false);
@@ -174,8 +181,8 @@ const ChatUser = ({ abcd }) => {
       label_size: 12,
       col_size: 3,
       options: [
-        { label: 'Add', value: '1' },
-        { label: 'Minus', value: '2' },
+        { label: 'Deposit (Add)', value: '1' },
+        { label: 'Withdraw (Minus)', value: '2' },
       ],
     },
     {
@@ -184,6 +191,7 @@ const ChatUser = ({ abcd }) => {
       type: 'text',
       label_size: 12,
       col_size: 12,
+      display: 'flex',
     },
     {
       name: 'paymenttype',
@@ -192,7 +200,7 @@ const ChatUser = ({ abcd }) => {
       label_size: 12,
       col_size: 3,
       options: GetBankList?.map((item) => ({
-        label: item.bankname,
+        label: item.bankName,
         value: item._id,
       })),
     },
@@ -200,10 +208,11 @@ const ChatUser = ({ abcd }) => {
       name: 'upiId',
       label: 'UPI Id',
       type: 'select',
+      Visiblity: 'hidden',
       label_size: 12,
       col_size: 6,
       options: GetUpiList?.map((item) => ({
-        label: item.upiid,
+        label: item.UPI_ID,
         value: item._id,
       })),
     },
@@ -213,6 +222,7 @@ const ChatUser = ({ abcd }) => {
       type: 'text',
       label_size: 12,
       col_size: 12,
+      // display: 'none',
     },
   ];
 
@@ -411,7 +421,7 @@ const ChatUser = ({ abcd }) => {
         </div>
 
         <DialogBox
-          title={'Update Wallet Balances'}
+          title={'Update Wallet Balance'}
           modal_id={'modal-2'}
           OpenModal={OpenModal}
           setOpenModal={setOpenModal}

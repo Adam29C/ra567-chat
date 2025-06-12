@@ -168,11 +168,13 @@ const MessageSend = ({ setfirst }) => {
       formData
     );
 
+    console.log('response.data', response?.files[0].url);
+
     setImage(mediaUrl);
     dispatch(VisiblityPreviewImage(true));
     dispatch(
       UploadDocument({
-        file: isVideo ? response.data.videos[0] : response.data.images[0],
+        file: isVideo ? response?.files[0].url : response?.files[0].url,
         fileType: isVideo ? 'video' : 'image',
       })
     );
